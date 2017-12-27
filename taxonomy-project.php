@@ -21,7 +21,7 @@
 			<div class="artwork-wrap">
 				<span class="helper"></span>
 				<?php if( get_field('artwork_image') ): ?>
-				<img class="artwork" src="<?php the_field('artwork_image'); ?>" />
+				<img class="artwork" src="<?php echo get_field('artwork_image')['sizes']['artwork']; ?>" />
 				<?php endif; ?>
 				<?php if( get_field('artwork_text') ): ?>
 				<div><?php the_field('artwork_text'); ?></div>

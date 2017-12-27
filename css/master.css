@@ -165,6 +165,7 @@ header {
 
 .artwork-container {
 	margin-top: 50px;
+	margin-bottom: 100px;
 	position: absolute;
 	display: inline-block;
 	height: 550px;

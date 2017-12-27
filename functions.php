@@ -21,4 +21,8 @@ function load_custom_scripts() {
 add_action('wp_enqueue_scripts', 'load_custom_scripts');
 
 add_filter('show_admin_bar', '__return_false');
+
+//image sizes
+add_image_size( 'artwork', 1100, 1100 );
+
 ?>

@@ -1,0 +1,22 @@
+{
+    "key": "group_5a433990c6b5a",
+    "title": "Project Taxonomy Meta Fields",
+    "fields": [],
+    "location": [
+        [
+            {
+                "param": "taxonomy",
+                "operator": "==",
+                "value": "project"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [],
+    "old_ID": 39,
+    "modified": 1514355088
+}

@@ -40,7 +40,7 @@
 					<div class="artwork-wrap">
 						<span class="helper"></span>
 						<?php $term_link = get_term_link( $term ); ?>
-						<a href="<?php echo $term_link; ?>"><img class="artwork" src="<?php the_field('project_image', $term); ?>"></a>
+						<a href="<?php echo $term_link; ?>"><img class="artwork" src="<?php echo get_field('project_image', $term)['sizes']['artwork']; ?>"></a>
 						<span class="project-data">
 						<a href="<?php echo $term_link; ?>"><span class="title"><?php echo $term->name; ?></span></a><br>
 						<?php the_field('year', $term); ?>
