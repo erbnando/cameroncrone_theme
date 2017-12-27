@@ -1,7 +1,98 @@
 {
     "key": "group_5a433990c6b5a",
     "title": "Project Taxonomy Meta Fields",
-    "fields": [],
+    "fields": [
+        {
+            "key": "field_55b9ded52d8c0",
+            "label": "Year",
+            "name": "Year",
+            "type": "text",
+            "instructions": "The year appears in two places: in the homepage below the project image and in the Project page as part of the project information section.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "Example: 2012",
+            "prepend": "",
+            "append": "",
+            "formatting": "html",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_55bd74eaa9500",
+            "label": "Project Summary",
+            "name": "project_summary",
+            "type": "text",
+            "instructions": "The summary appears in one place: in the Project page as part of the project information section.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "Example: 12 Color Photographs",
+            "prepend": "",
+            "append": "",
+            "formatting": "html",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_55bd761259bce",
+            "label": "Dimensions",
+            "name": "dimensions",
+            "type": "text",
+            "instructions": "The dimensions appear in one place: in the Project page as part of the project information section.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "Example: 94\" x 1236\"",
+            "prepend": "",
+            "append": "",
+            "formatting": "html",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_55bde7a37aef6",
+            "label": "Project Image",
+            "name": "project_image",
+            "type": "image",
+            "instructions": "The Project image appears in one place: in the homepage as the featured image of the project. Image size should be at least 1100px in width or height",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "preview_size": "thumbnail",
+            "library": "all",
+            "return_format": "array",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
+        }
+    ],
     "location": [
         [
             {
@@ -16,7 +107,6 @@
     "style": "seamless",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": [],
-    "old_ID": 39,
-    "modified": 1514355088
+    "hide_on_screen": "",
+    "modified": 1514355623
 }
