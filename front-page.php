@@ -1,7 +1,5 @@
 <?php get_header(); ?>
 	<div class="container home">
-		<div class="project-info-container">
-		</div>
 		<div class="overlay"></div>
 		<div class="artwork-container">
 			<?php 
@@ -36,17 +34,22 @@
 			$terms = get_terms( 'project' );
 			if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){
 			    foreach ( $terms as $term ) { ?>
-					<span class="helper"></span>
 					<div class="artwork-wrap">
-						<span class="helper"></span>
-						<?php $term_link = get_term_link( $term ); ?>
-						<a href="<?php echo $term_link; ?>"><img class="artwork" src="<?php echo get_field('project_image', $term)['sizes']['artwork']; ?>"></a>
-						<span class="project-data">
-						<a href="<?php echo $term_link; ?>"><span class="title"><?php echo $term->name; ?></span></a><br>
-						<?php the_field('year', $term); ?>
-						</span>
+						
+						<div>
+							<?php $term_link = get_term_link( $term ); ?>
+							<a href="<?php echo $term_link; ?>"><img class="artwork" src="<?php echo get_field('project_image', $term)['sizes']['artwork']; ?>"></a>
+							<span class="project-data">
+								<a href="<?php echo $term_link; ?>">
+								<span class="title"><?php echo $term->name; ?></span>
+								</a>
+								<br>
+								<?php the_field('Year', $term); ?>
+							</span>
+						</div>
+
 					</div>
-					<?php
+				<?php
 				}
 			}
 		?>

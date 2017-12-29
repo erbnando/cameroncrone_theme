@@ -9,14 +9,12 @@
 	<?php wp_head(); ?>
 </head>
 
-<body>
+<body id="body">
 	<header>
-		<a href="#" id="menu-icon"></a>
+		<a href="" id="menu-icon"></a>
 		<nav>
 			<?php wp_nav_menu(array(
 				'theme_location' => 'main-menu'
 			)); ?>
 		</nav>
 	</header>
-	<div class="placeholder"></div>
-	<div class="spacer"></div>

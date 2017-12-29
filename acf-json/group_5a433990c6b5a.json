@@ -5,7 +5,7 @@
         {
             "key": "field_55b9ded52d8c0",
             "label": "Year",
-            "name": "Year",
+            "name": "year",
             "type": "text",
             "instructions": "The year appears in two places: in the homepage below the project image and in the Project page as part of the project information section.",
             "required": 0,
@@ -19,10 +19,7 @@
             "placeholder": "Example: 2012",
             "prepend": "",
             "append": "",
-            "formatting": "html",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
+            "maxlength": ""
         },
         {
             "key": "field_55bd74eaa9500",
@@ -74,22 +71,22 @@
             "name": "project_image",
             "type": "image",
             "instructions": "The Project image appears in one place: in the homepage as the featured image of the project. Image size should be at least 1100px in width or height",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
+            "return_format": "array",
             "preview_size": "thumbnail",
             "library": "all",
-            "return_format": "array",
-            "min_width": 0,
-            "min_height": 0,
-            "min_size": 0,
-            "max_width": 0,
-            "max_height": 0,
-            "max_size": 0,
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
             "mime_types": ""
         }
     ],
@@ -108,5 +105,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1514355623
+    "active": 1,
+    "description": "",
+    "modified": 1514503826
 }

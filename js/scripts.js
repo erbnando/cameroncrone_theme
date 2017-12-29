@@ -1,54 +1,99 @@
-jQuery('#menu-main-menu').hover(
-	function(){jQuery('.project-info').css('opacity', '.1')},
-	function(){jQuery('.project-info').css('opacity', '')}
-);
+(function($) {
 
-jQuery('#menu-main-menu > li > a').mouseenter(
-	function(){jQuery('.overlay').css('opacity', '.9')}
-);
+	$('#menu-main-menu').hover(
+		function(){$('.project-info').css('opacity', '.1')},
+		function(){$('.project-info').css('opacity', '')}
+	);
+	
+	$('#menu-main-menu > li > a').mouseenter(
+		function(){$('.overlay').css('opacity', '.9')}
+	);
+	
+	$('#menu-main-menu').mouseleave(
+		function(){$('.overlay').css('opacity', '')}
+	);
+	
+	$("#menu-icon").click(function(e) {
+		e.preventDefault();
+		$(".sub-menu").toggle();
+	});
+	
+	var count = document.images.length;
+	var counter = 0;
+	if (count > 0) {
+		var imagesLoaded = setInterval(function(){
+			$('img').each(function() {
+				if( this.complete ) {
+					counter = counter+1;
+					if (counter == count) {
+						console.log('all images loaded');
+						$('body').css('opacity', '1');
+						clearInterval(imagesLoaded);
+					} else {
+						console.log('images still loading');
+					}	
+				}
+			});
+		}, 100);
+	} else {
+		$('body').css('opacity', '1');
+	}
+		
+	$(function() {
+	});	
 
-jQuery('#menu-main-menu').mouseleave(
-	function(){jQuery('.overlay').css('opacity', '')}
-);
-/*
-jQuery('#menu-main-menu > li > a').mouseenter(
-	function(){jQuery('.sub-menu').show()}
-);
+	$(window).load(function() {
+		if ($('.artwork-container')) {
+			$('.artwork').each(function() {
+				width = $(this).width();
+				$(this).parent().parent().find('span').width(width);
+			});
+			equalheight('.artwork-wrap > div > a');
+		}
+	});
+	
+	$(window).resize(function(){
+		if ($('.artwork-container')) {
+			$('.artwork').each(function() {
+				width = $(this).width();
+				$(this).parent().parent().find('span').width(width);
+			});
+			equalheight('.artwork-wrap > div > a');
+		}
+	});
 
-jQuery('#menu-main-menu').mouseleave(
-	function(){jQuery('.sub-menu').hide()}
-);
-*/
-jQuery(".artwork").filter(function(){
-    var $this = jQuery(this);
-    return $this.width() > $this.height();
-	}).addClass("horizontal");
+	equalheight = function(container){
 
-jQuery(".artwork").filter(function(){
-    var $this = jQuery(this);
-    return $this.width() < $this.height();
-	}).addClass("vertical");
+		var currentTallest = 0;
+		var currentRowStart = 0;
+		var rowDivs = new Array();
+		var $el;
+		var topPosition = 0;
+		var currentDiv;
 
-jQuery( "#menu-icon" ).click(function() {
-    jQuery( ".sub-menu" ).toggle();
-/*
-	var divHeight = jQuery('.sub-menu').height(); 
-    jQuery(".placeholder").css('min-height', divHeight+'px');
-    jQuery( ".placeholder" ).toggle();
-*/
-});
+		$(container).each(function() {
+			$el = $(this);
+			$($el).height('auto')
+			topPosition = $el.position().top;
 
-window.onload = workheight;
-jQuery(window).resize(workheight);
+			if (currentRowStart != topPosition) {
+				for (currentDiv = 0 ; currentDiv < rowDivs.length ; currentDiv++) {
+					rowDivs[currentDiv].height(currentTallest);
+				}
+				rowDivs.length = 0; // empty the array
+				currentRowStart = topPosition;
+				currentTallest = $el.height();
+				rowDivs.push($el);
 
-function workheight() {
-var maxHeight = -1;
+			} else {
+				rowDivs.push($el);
+				currentTallest = (currentTallest < $el.height()) ? ($el.height()) : (currentTallest);
+			}
 
-jQuery('.artwork').each(function() {
-maxHeight = maxHeight > jQuery(this).height() ? maxHeight : jQuery(this).height();
-});
+			for (currentDiv = 0 ; currentDiv < rowDivs.length ; currentDiv++) {
+				rowDivs[currentDiv].height(currentTallest);
+			}
+		});
+	}
 
-jQuery('.artwork-wrap').each(function() {
-jQuery(this).css('max-height', maxHeight);
-});
-};
+})(jQuery);

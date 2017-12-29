@@ -9,7 +9,7 @@
 				<p><?php
 				$termDiscription = term_description( '', get_query_var( 'taxonomy' ) );
 				if($termDiscription != '') : ?>
-				<div class="tag-desc"><?php echo $termDiscription; ?></div>
+					<div class="tag-desc"><?php echo $termDiscription; ?></div>
 				<?php endif; ?></p>
 			</div>
 		</div>
@@ -18,15 +18,21 @@
 		<?php if (have_posts()) : while(have_posts()) : the_post(); ?>
 			<?php the_content(); ?>
 			<span class="helper"></span>
+
 			<div class="artwork-wrap">
-				<span class="helper"></span>
-				<?php if( get_field('artwork_image') ): ?>
-				<img class="artwork" src="<?php echo get_field('artwork_image')['sizes']['artwork']; ?>" />
-				<?php endif; ?>
-				<?php if( get_field('artwork_text') ): ?>
-				<div><?php the_field('artwork_text'); ?></div>
-				<?php endif; ?>
+				
+				<div>
+					<?php $term_link = get_term_link( $term ); ?>
+					<?php if( get_field('artwork_image') ): ?>
+					<a><img class="artwork" src="<?php echo get_field('artwork_image')['sizes']['artwork']; ?>" /></a>
+					<?php endif; ?>
+					<?php if( get_field('artwork_text') ): ?>
+					<span class="project-data"><?php the_field('artwork_text'); ?></span>
+					<?php endif; ?>
+				</div>
+
 			</div>
+
 		<?php endwhile; else : ?>
 		</div>
 	</div>
