@@ -115,14 +115,12 @@ header {
       vertical-align: top;
       padding-right: 60px; }
       .container .artwork-container .artwork-wrap > div a {
-        display: block; }
+        display: table-cell;
+        vertical-align: middle; }
         .container .artwork-container .artwork-wrap > div a .artwork {
           vertical-align: middle;
           max-height: 550px;
-          max-width: 550px;
-          position: relative;
-          top: 50%;
-          transform: translateY(-50%); }
+          max-width: 550px; }
       .container .artwork-container .artwork-wrap > div .project-data {
         display: table-cell;
         font-family: Arial;
@@ -227,6 +225,7 @@ header {
         .container .artwork-container .artwork-wrap > div {
           margin: 0 auto; }
           .container .artwork-container .artwork-wrap > div a {
+            display: block;
             height: auto !important; }
             .container .artwork-container .artwork-wrap > div a img {
               max-width: 450px !important;

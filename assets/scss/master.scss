@@ -156,15 +156,13 @@ header {
 			padding-right: 60px;
 			> div {
 				a {
-					display: block;
+					display: table-cell;
+					vertical-align: middle;
 					.artwork {
 						vertical-align: middle;
 						max-height: 550px;
 						max-width: 550px;
-						position: relative;
-						top: 50%;
-						transform: translateY(-50%);
-					}			
+					}
 				}
 				.project-data {
 					display: table-cell;
@@ -354,6 +352,7 @@ header {
 				> div {
 					margin: 0 auto;
 					a {
+						display: block;
 						height: auto!important;
 						img {
 							max-width: 450px!important;
